@@ -7,6 +7,12 @@ const Section = styled.section`
   padding: 100px;
   color: #fff;
 `
+const H1= styled.h1`
+  color: #fff;
+  font-weight: 700;
+  font-size: 40px;
+  line-height:52px;
+`
 
 const Jumbotron = () => {
   return (
@@ -15,7 +21,7 @@ const Jumbotron = () => {
         <div className="row">
           <div className="col col-sm-12 col-md-5">
             <div className="pt-4 mt-4">
-              <h1>React for Rails Devs</h1>
+              <H1>React for Rails Devs</H1>
               <p>Become a super rails dev with React front-end</p>
             </div>
           </div>
