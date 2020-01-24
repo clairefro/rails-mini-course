@@ -8,6 +8,8 @@
 import React, { Component } from 'react';
 
 import Jumbotron from './jumbotron';
+import Table from './toc/table';
+
 class Home extends Component {
   constructor() {
     super();
@@ -26,6 +28,7 @@ class Home extends Component {
     return (
       <div>
         <Jumbotron />
+        <Table course_modules={this.state.course_modules} />
       </div>
     );
   }
