@@ -6,6 +6,7 @@
 //       Expanded vid
 
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import Jumbotron from './jumbotron';
 import Table from './toc/table';
@@ -16,7 +17,7 @@ class Home extends Component {
 
     this.state = {
       course_modules: [
-        { id:1, title:'1 .Setup', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam aliquid vel dolore tempora quis laudantium veritatis magnam reiciendis suscipit placeat tempore distinctio, nostrum repellat dolores odit. Necessitatibus incidunt voluptas quae.', active:false },
+        { id:1, title:'1. Setup', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam aliquid vel dolore tempora quis laudantium veritatis magnam reiciendis suscipit placeat tempore distinctio, nostrum repellat dolores odit. Necessitatibus incidunt voluptas quae.', active:false },
         { id:2, title:'2. Tooling', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam aliquid vel dolore tempora quis laudantium veritatis magnam reiciendis suscipit placeat tempore distinctio, nostrum repellat dolores odit. Necessitatibus incidunt voluptas quae.', active:true },
         { id:3, title:'3. Something else', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam aliquid vel dolore tempora quis laudantium veritatis magnam reiciendis suscipit placeat tempore distinctio, nostrum repellat dolores odit. Necessitatibus incidunt voluptas quae.', active:false },
         { id:4, title:'4. Deploy', desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam aliquid vel dolore tempora quis laudantium veritatis magnam reiciendis suscipit placeat tempore distinctio, nostrum repellat dolores odit. Necessitatibus incidunt voluptas quae.', active:false }
@@ -24,6 +25,19 @@ class Home extends Component {
     }
   }
 
+  componentDidMount = () => {
+    axios.get('/episodes.json')
+    .then((data) => {
+      let result = [];
+        data.data.data.map((data) => {
+          result.push({id: data.id, title: data.title, desc: data.desc, active: false})
+          this.setState({ course_modules: result})
+       })
+    })
+    .catch((data) => {
+
+    });
+  }
   handleVideoChange = (item, event) => {
     event.preventDefault();
     let course_modules = [...this.state.course_modules];
