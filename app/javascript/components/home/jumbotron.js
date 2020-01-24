@@ -26,6 +26,7 @@ const Button = styled.a`
   cursor: pointer;
   border-radius: 0;
   background: #fff;
+  font-size: 18px;
   padding: 10px 20px;
   color: #333 !important;
   box-shadow: 0px 0px 0px 3px #473228,
