@@ -12,7 +12,6 @@ const Header = styled.h1`
   font-weight: 700;
   font-size: 40px;
   line-height:52px;
-  backgroun: #fff;
 `
 
 const Subhead = styled.p`
