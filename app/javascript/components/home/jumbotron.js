@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Section = styled.section`
   background-color: #d64234;
   min-height: 550px;
-  padding: 250px;
+  padding: 100px;
   color: #fff;
 `
 
