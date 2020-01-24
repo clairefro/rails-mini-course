@@ -7,11 +7,16 @@ const Section = styled.section`
   padding: 100px;
   color: #fff;
 `
-const H1= styled.h1`
+const Header= styled.h1`
   color: #fff;
   font-weight: 700;
   font-size: 40px;
   line-height:52px;
+`
+
+const Subhead = styled.p`
+  font-size: 18px;
+  font-weight: 500;
 `
 
 const Jumbotron = () => {
@@ -21,8 +26,8 @@ const Jumbotron = () => {
         <div className="row">
           <div className="col col-sm-12 col-md-5">
             <div className="pt-4 mt-4">
-              <H1>React for Rails Devs</H1>
-              <p>Become a super rails dev with React front-end</p>
+              <Header>React for Rails Devs</Header>
+              <Subhead>Become a super rails dev with React front-end</Subhead>
             </div>
           </div>
           <div className="col col-sm-12 col-md-7">
